@@ -14,8 +14,9 @@ def main():
     name1 = input("Enter one name (subscriber): ")
     name2 = input("Enter another name (publisher): ")
 
-    my_delegate = DelegateThatReceives()
-    mqtt_client = com.MqttClient(my_delegate)
+    my_delegate = DelegateThatReceives()  # This is creating a new object
+    mqtt_client = com.MqttClient(my_delegate)  # This assigns mqtt_client to the object MqttClient(my_delegate) defined
+    # in the com file
     mqtt_client.connect(name1, name2)
     time.sleep(1)  # Time to allow the MQTT setup.
     print()
